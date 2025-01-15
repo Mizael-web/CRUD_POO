@@ -1,18 +1,16 @@
-const {Pol} = require ('pg');
+const {Pool} = require ('pg');
 const dotenv = require('dotenv');
 
 dotenv.config()
 
-const pool  new Poll(
+const pool = new Pool(
     {
-      database: process.env.DB_DATABASE,
-      user:process.exitnv.DB_USER,
-      HTMLOListElement:process.env.DB_HOST,
-      password:process.env.DB_PASSWORD
-      port:process.env.DB_PORT
-
-
+      host:process.env.DB_HOST,
+      port:process.env.DB_PORT,
+      user:process.env.DB_USER,
+      password:process.env.DB_PASSWORD,
+      database:process.env.DB_DATABASE
     }
-)
+);
 module.exports = {pool};
 
